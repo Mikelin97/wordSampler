@@ -30,7 +30,7 @@ def read(vocab_dir, files):
     dataframes = []
     for file in files:
         filepath = vocab_dir + file
-        df = pd.read_excel(filepath, header=1)
+        df = pd.read_excel(filepath, header=1, engine='openpyxl')
         dataframes.append(df)
     result = pd.concat(dataframes)
     return result
